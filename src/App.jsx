@@ -31,16 +31,23 @@ const filmsList = [
 export default function App() {
 
   const [films, setFilms] = useState(filmsList)
+  const [searchText, setSearchText] = useState('')
+
+  const filteredFilms = films.filter(film =>
+    film.genre.toLowerCase().includes(searchText.toLowerCase())
+  )
 
   return (
 
     <>
 
       <div className="section text-center mt-3">
+        <h1>Titles</h1>
         {
-          films.map((film, index) => (
+          filteredFilms.map((film, index) => (
             <div key={index}>
-              <h1>{film.title}</h1>
+              <h3>{film.title}</h3>
+              <span>{film.genre}</span>
             </div>
           ))
         }
@@ -51,10 +58,11 @@ export default function App() {
           <input
             type="text"
             className="form-control"
-            name=""
-            id=""
-            placeholder=""
+            id="search"
+            placeholder="Text Title Here"
             aria-describedby="fileHelpId"
+            value={searchText}
+            onChange={e => setSearchText(e.target.value)}
           />
 
         </div>
