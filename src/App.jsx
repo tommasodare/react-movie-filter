@@ -46,7 +46,7 @@ export default function App() {
     <>
 
       <div className="section text-center mt-3">
-        <h1>Titles</h1>
+        <h1>Movies</h1>
         {
           filteredFilms.map((film, index) => (
             <div key={index}>
@@ -56,9 +56,18 @@ export default function App() {
           ))
         }
 
+        {
+          filteredMovies.map((film, index) => (
+            <div key={index}>
+              <h3>{film.title}</h3>
+              <span>{film.genre}</span>
+            </div>
+          ))
+        }
+
         <div className="my-3">
 
-          <label htmlFor="" className="form-label">Find Title</label>
+          <label htmlFor="" className="form-label">Find Movie</label>
           <input
             type="text"
             className="form-control"
