@@ -28,8 +28,6 @@ const filmsList = [
   }
 ]
 
-
-
 export default function App() {
 
   const [films, setFilms] = useState(filmsList)
@@ -38,7 +36,7 @@ export default function App() {
 
     <>
 
-      <div className="section">
+      <div className="section text-center mt-3">
         {
           films.map((film, index) => (
             <div key={index}>
@@ -46,8 +44,23 @@ export default function App() {
             </div>
           ))
         }
-      </div>
 
+        <div className="my-3">
+
+          <label htmlFor="" className="form-label">Find Title</label>
+          <input
+            type="text"
+            className="form-control"
+            name=""
+            id=""
+            placeholder=""
+            aria-describedby="fileHelpId"
+          />
+
+        </div>
+
+
+      </div>
 
     </>
 
