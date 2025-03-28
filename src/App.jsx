@@ -37,6 +37,10 @@ export default function App() {
     film.genre.toLowerCase().includes(searchText.toLowerCase())
   )
 
+  const filteredMovies = films.filter(film =>
+    film.title.toLowerCase().includes(searchText.toLowerCase())
+  )
+
   return (
 
     <>
